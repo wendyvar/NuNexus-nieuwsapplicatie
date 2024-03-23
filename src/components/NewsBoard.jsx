@@ -1,16 +1,18 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import NewsItem from "./NewsItem";
-const NewsBoard = () => {
+
+
+
+const NewsBoard = ({category}) => {
 
     const [articles,setArticles] = useState([]);
 
     useEffect(()=>{
-        let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=87b06bf9e4d94dc09cd8ce2f686fad90';
-        fetch(url).then(response=> response.json()).then(data=> setArticles(data.articles));
-
-
-    },[])
+      let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=87b06bf9e4d94dc09cd8ce2f686fad90`;
+      fetch(url).then(response=> response.json()).then(data=> setArticles(data.articles));
+  }, [category]) // Also, add `category` to the dependency array
+  
 
   return (
     <div>

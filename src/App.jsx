@@ -1,16 +1,21 @@
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import NewsBoard from "./components/NewsBoard";
+import Home from "./components/Home";
 
-import Navbar from "./components/Navbar"
-import NewsBoard from "./components/NewsBoard"
-import NewsItem from "./components/NewsItem"
 const App = () => {
+  const [category, setCategory] = useState("home"); // Use "home" as the initial state
+  
   return (
     <div>
-      <Navbar/>
-      <NewsBoard/>
-      <NewsItem/>
-
+      <Navbar setCategory={setCategory} />
+      {category === "home" ? (
+        <Home />
+      ) : (
+        <NewsBoard category={category} />
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

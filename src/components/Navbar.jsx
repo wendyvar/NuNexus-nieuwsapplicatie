@@ -1,4 +1,5 @@
-const Navbar = () => {
+const Navbar = ({setCategory}) => {
+
   return (
     <nav className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
   <div className="container-fluid">
@@ -8,18 +9,25 @@ const Navbar = () => {
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+      <li className="nav-item">
+      <div className="nav-link" onClick={() => setCategory("home")}>Home</div>
+</li>
+      
+      <li className="nav-item">
+          <div className="nav-link" onClick={()=>setCategory("science")}>Science</div>
         </li>
+
         <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
+          <div className="nav-link" onClick={()=>setCategory("business")}>Business</div>
         </li>
+    
         <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
+          <div className="nav-link" onClick={()=>setCategory("technology")}>Technology</div>
         </li>
-        <li className="nav-item">
-          <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+
+     
+    
+       
       </ul>
     </div>
   </div>
