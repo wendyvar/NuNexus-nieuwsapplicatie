@@ -1,7 +1,7 @@
 
 import PropTypes from 'prop-types';
 import image from '../assets/news.jpg.jpg';
-
+import '../index.css';
 
 
 

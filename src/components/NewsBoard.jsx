@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import NewsItem from "./NewsItem";
-
-
+import '../index.css';
 
 const NewsBoard = ({category}) => {
 
